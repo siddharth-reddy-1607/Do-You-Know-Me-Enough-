@@ -1,4 +1,68 @@
-///import chalk from 'chalk';
+//Exercise 14,15// This is the code for the quiz :)
+var score=0;
+var check=0;
+console.log("Answer the questions using a simple Yes/No");
+function quiz(question,answer)
+  {
+    var readLineSync=require("readline-sync");
+    var user_answer=readLineSync.question(question);
+    if(user_answer.toUpperCase() === answer.toUpperCase())
+    {
+      score++;
+      console.log("Correct!!Current Score="+score);
+    }
+    else
+    {
+      console.log("Incorrect!!!Current Score="+score);
+    }
+  }
+var qOne={
+  question : "Will RCB win IPL this year?", answer:"Yes"
+};
+
+var qTwo={question: "Will Virat Kohli score a century this year?",answer:"No"};
+
+var qThree={question: "Will Delhi Weather ever Be Good?",answer:"No"};
+
+var qFour={question: "Is Gokul a good room-mate? :)",answer:"No"};
+
+var qFive={question:"Am I excited to go to BLR?!!",answer:"Yes"}
+
+var questionList=[qOne,qTwo,qThree,qFour,qFive];
+for(var i=0;i<questionList.length;i++)
+  {
+    quiz(questionList[i].question,questionList[i].answer);
+    console.log();
+  }
+console.log("Final Score is "+score);
+
+var high_scores=[{name : "Siddharth",score:5},{name:"Amma",score:5}];
+
+console.log("These the are high scores currently");
+for(var i=0;i<high_scores.length;i++)
+  {
+    console.log("Name:"+high_scores[i].name+" Score:"+high_scores[i].score);
+    if(score < high_scores[i].score)
+    {
+      check=0;
+    }
+    else
+    {
+      check=1;
+    
+    }
+    
+  }
+if(check === 1)
+{
+  console.log("Congrats! You have matched or bettered the High Score.Send an SS to get yours added on the leader board");
+}
+else
+{
+  console.log("You don't know me well enough yo....can't be on the leaderboard and all");
+}
+
+
 //Exercise 1
 // console.log("Siddarth Reddy");
 
@@ -133,70 +197,5 @@ var qTwo={question: "Will Virat Kohli score a century this year?",answer:"No"};
 console.log(qOne.question,qOne.answer);
 console.log(qTwo.question,qTwo.answer);*/  
 
-//Exercise 14,15
-var score=0;
-var check=0;
-console.log("Answer the questions using a simple Yes/No");
-function quiz(question,answer)
-  {
-    var readLineSync=require("readline-sync");
-    var user_answer=readLineSync.question(question);
-    if(user_answer.toUpperCase() === answer.toUpperCase())
-    {
-      score++;
-      console.log("Correct!!Current Score="+score);
-    }
-    else
-    {
-      console.log("Incorrect!!!Current Score="+score);
-    }
-  }
-var qOne={
-  question : "Will RCB win IPL this year?", answer:"Yes"
-};
 
-var qTwo={question: "Will Virat Kohli score a century this year?",answer:"No"};
-
-var qThree={question: "Will Delhi Weather ever Be Good?",answer:"No"};
-
-var qFour={question: "Is Gokul a good room-mate? :)",answer:"No"};
-
-var qFive={question:"Am I excited to go to BLR?!!",answer:"Yes"}
-
-var questionList=[qOne,qTwo,qThree,qFour,qFive];
-for(var i=0;i<questionList.length;i++)
-  {
-    quiz(questionList[i].question,questionList[i].answer);
-    console.log();
-  }
-console.log("Final Score is "+score);
-
-var high_scores=[{name : "Siddharth",score:5},{name:"Amma",score:5}];
-
-console.log("These the are high scores currently");
-for(var i=0;i<high_scores.length;i++)
-  {
-    console.log("Name:"+high_scores[i].name+" Score:"+high_scores[i].score);
-    if(score < high_scores[i].score)
-    {
-      check=0;
-    }
-    else
-    {
-      check=1;
-    
-    }
-    
-  }
-if(check === 1)
-{
-  console.log("Congrats! You have matched or bettered the High Score.Send an SS to get yours added on the leader board");
-}
-else
-{
-  console.log("You don't know me well enough yo....can't be on the leaderboard and all");
-}
-
-//Using Chalk
-//console.log(chalk.blue("Hello in Blue :)"));
 
